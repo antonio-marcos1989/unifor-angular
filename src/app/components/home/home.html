@@ -1,0 +1,75 @@
+<!-- HERO -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h1 class="display-5 fw-bold">{{ appName }}</h1>
+        <p class="lead">
+          Uma landing page em Angular 20 para demonstrar componentização,
+          reaproveitamento e integração com Bootstrap.
+        </p>
+        <button class="btn btn-primary btn-lg me-2">Começar agora</button>
+        <button class="btn btn-outline-secondary btn-lg">Saber mais</button>
+      </div>
+      <div class="col-md-6 text-center">
+        <img
+          src="https://via.placeholder.com/450x300"
+          class="img-fluid rounded shadow"
+          alt="Ilustração"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Recursos</h2>
+
+    @if (features.length > 0) {
+      <div class="row g-4">
+        @for (feature of features; track feature.title) {
+          <div class="col-md-4">
+            <app-feature-card
+              [title]="feature.title"
+              [description]="feature.description">
+            </app-feature-card>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="alert alert-warning text-center" role="alert">
+        Nenhum recurso disponível no momento.
+      </div>
+    }
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section id="contato" class="py-5 bg-body-tertiary">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 text-center">
+        <h2>Fale com a gente</h2>
+        <p class="mb-4">
+          Deixe seu e-mail e entraremos em contato.
+        </p>
+        <form class="row g-2 justify-content-center">
+          <div class="col-md-6">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="seuemail@exemplo.com"
+            />
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
